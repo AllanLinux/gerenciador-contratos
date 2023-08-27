@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  getCurrentYear(): number {
+    const ano_current = new Date();
+    return ano_current.getFullYear();
+  }
+  autor = "Allan Lopes Ferreira";
+
 }

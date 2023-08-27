@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  app_nome = "Gerenciador de contratos"
+
 }
