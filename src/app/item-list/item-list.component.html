@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Tipo de Contrato</th>
+        <th>Status</th>
+        <th>Data Inicio</th>
+        <th>Data Fim</th>
+        <th>Arquivo</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contrato of contratos">
+        <td>{{ contrato.cliente }}</td>
+        <td>{{ contrato.tipoContrato }}</td>
+        <td>{{ contrato.status }}</td>
+        <td>{{ contrato.dataInicio }}</td>
+        <td>{{ contrato.dataFim }}</td>
+        <td>{{ contrato.arquivo }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm">Excluir</button>
+          <button class="btn btn-info btn-sm">Alterar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary mt-3">Adicionar</button>
+</div>
