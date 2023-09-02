@@ -7,6 +7,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import { AddContratoComponent } from './add-contrato/add-contrato.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { ItemListComponent } from './item-list/item-list.component';
     NavbarComponent,
     FooterComponent,
     SobreComponent,
-    ItemListComponent
+    ItemListComponent,
+    AddContratoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,48 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          <h2>Adicionar Contrato</h2>
+        </div>
+        <div class="card-body">
+          <form (submit)="adicionarContrato()">
+            <div class="mb-3">
+              <label for="cliente" class="form-label">Nome do Cliente</label>
+              <input type="text" class="form-control" id="cliente" [(ngModel)]="contrato.cliente" name="cliente" required>
+            </div>
+            <div class="mb-3">
+              <label for="tipoContrato" class="form-label">Tipo de Contrato</label>
+              <input type="text" class="form-control" id="tipoContrato" [(ngModel)]="contrato.tipoContrato" name="tipoContrato" required>
+            </div>
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <input type="text" class="form-control" id="status" [(ngModel)]="contrato.status" name="status" required>
+            </div>
+            <div class="mb-3">
+              <label for="dataCadastro" class="form-label">Data de Cadastro</label>
+              <input type="date" class="form-control" id="dataCadastro" [(ngModel)]="contrato.dataCadastro" name="dataCadastro" required>
+            </div>
+            <div class="mb-3">
+              <label for="dataInicio" class="form-label">Data de Início</label>
+              <input type="date" class="form-control" id="dataInicio" [(ngModel)]="contrato.dataInicio" name="dataInicio" required>
+            </div>
+            <div class="mb-3">
+              <label for="dataFim" class="form-label">Data de Fim</label>
+              <input type="date" class="form-control" id="dataFim" [(ngModel)]="contrato.dataFim" name="dataFim" required>
+            </div>
+            <div class="mb-3">
+              <label for="descricao" class="form-label">Descrição</label>
+              <textarea class="form-control" id="descricao" [(ngModel)]="contrato.descricao" name="descricao" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="arquivo" class="form-label">Nome do Arquivo</label>
+              <input type="text" class="form-control" id="arquivo" [(ngModel)]="contrato.arquivo" name="arquivo" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

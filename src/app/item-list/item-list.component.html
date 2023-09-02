@@ -20,12 +20,12 @@
         <td>{{ contrato.dataFim }}</td>
         <td>{{ contrato.arquivo }}</td>
         <td>
-          <button class="btn btn-danger btn-sm">Excluir</button>
-          <button class="btn btn-info btn-sm">Alterar</button>
+          <button class="btn btn-danger btn-sm btn-space">Excluir</button>
+          <button class="btn btn-warning btn-sm">Alterar</button>
         </td>
       </tr>
     </tbody>
   </table>
-
-  <button class="btn btn-primary mt-3">Adicionar</button>
+  <button class="btn btn-primary mt-3" (click)="navegarParaAdicionar()">Adicionar</button>
 </div>
+<router-outlet></router-outlet>

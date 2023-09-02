@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Contrato } from '../contrato'; // Certifique-se de ajustar o caminho correto
+import { Contrato } from '../contrato';
+import { Router } from '@angular/router';
+import { ContratoService } from '../contrato.service';
+
 
 @Component({
   selector: 'app-item-list',
@@ -8,21 +11,17 @@ import { Contrato } from '../contrato'; // Certifique-se de ajustar o caminho co
 })
 export class ItemListComponent {
 
-  contratos: Contrato[] = [];
-
-  adicionarContrato() {
-    const novoContrato = new Contrato(
-      'Nome do Cliente',
-      'Tipo de Contrato',
-      'Status',
-      'Data de Cadastro',
-      'Data de Início',
-      'Data de Fim',
-      'Descrição',
-      'Nome do Arquivo'
-    );
-    this.contratos.push(novoContrato);
+  constructor(private contratoService: ContratoService, private router: Router) {
+    this.contratos = this.contratoService.obterContratos();
   }
 
-  // Mais lógica de manipulação de contratos
+  navegarParaAdicionar() {
+    this.router.navigate(['/add-contrato']);
+  }
+
+    contratos: Contrato[] = [];
+
+  adicionarContratoNaLista(contrato: Contrato) {
+    this.contratos.push(contrato);
+  }
 }
