@@ -1,5 +1,6 @@
 export class Contrato {
   constructor(
+    public codigo: string,
     public cliente: string,
     public tipoContrato: string,
     public status: string,
@@ -7,6 +8,6 @@ export class Contrato {
     public dataInicio: string,
     public dataFim: string,
     public descricao: string,
-    public arquivo: string
+    public valor: number
   ) {}
 }
