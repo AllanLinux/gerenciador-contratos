@@ -1,0 +1,16 @@
+{
+  "contratos": [
+    {
+      "id": 2,
+      "codigo": "1234",
+      "cliente": "Claro",
+      "tipoContrato": "Alocação",
+      "status": "Ativo",
+      "dataCadastro": "2022-01-01",
+      "dataInicio": "2022-01-01",
+      "dataFim": "2023-01-01",
+      "descricao": "Alocação",
+      "valor": "1.111,23"
+    }
+  ]
+}

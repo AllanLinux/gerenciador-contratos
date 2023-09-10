@@ -2,11 +2,11 @@
   <table class="table mt-3">
     <thead>
       <tr>
-        <th>Codigo</th>
+        <th>Código</th>
         <th>Cliente</th>
         <th>Tipo de Contrato</th>
         <th>Status</th>
-        <th>Data Inicio</th>
+        <th>Data Início</th>
         <th>Data Fim</th>
         <th>Ações</th>
       </tr>
@@ -20,15 +20,15 @@
         <td>{{ contrato.dataInicio }}</td>
         <td>{{ contrato.dataFim }}</td>
         <td>
-          <button class="btn btn-danger btn-sm btn-space" (click)="excluirContrato(i)">Excluir</button>
+          <button class="btn btn-danger btn-sm btn-space" (click)="excluirContrato(contrato.id)">Excluir</button>
           <button class="btn btn-warning btn-sm" (click)="visualizarDetalhes(contrato)">Detalhes</button>
         </td>
-
       </tr>
     </tbody>
   </table>
   <button class="btn btn-primary mt-3" (click)="navegarParaAdicionar()">Adicionar</button>
 </div>
+
 <div class="modal" tabindex="-1" [class.d-block]="exibirModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -37,15 +37,7 @@
         <button type="button" class="btn-close" (click)="fecharModal()"></button>
       </div>
       <div class="modal-body">
-        <p>Código: {{ contratoSelecionado?.codigo }}</p>
-        <p>Cliente: {{ contratoSelecionado?.cliente }}</p>
-        <p>Tipo de contrato: {{ contratoSelecionado?.tipoContrato }}</p>
-        <p>Status: {{ contratoSelecionado?.status }}</p>
-        <p>Data de cadastro: {{ contratoSelecionado?.dataCadastro }}</p>
-        <p>Data de início: {{ contratoSelecionado?.dataInicio }}</p>
-        <p>Data de encerramento: {{ contratoSelecionado?.dataFim }}</p>
-        <p>Descrição: {{ contratoSelecionado?.descricao }}</p>
-        <p>Valor do contrato: {{ contratoSelecionado?.valor }}</p>
+        <app-contratodetalhe [contrato]="contratoSelecionado"></app-contratodetalhe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="fecharModal()">Fechar</button>
@@ -53,4 +45,6 @@
     </div>
   </div>
 </div>
+
+
 <router-outlet></router-outlet>

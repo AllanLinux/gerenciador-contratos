@@ -7,11 +7,11 @@
         </div>
         <div class="card-body">
           <form #form="ngForm" (submit)="adicionarContrato()">
+
             <div class="mb-3">
               <label for="codigo" class="form-label">Codigo do Contrato</label>
-              <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="this.contrato.codigo" #codigo="ngModel" pattern="^[a-zA-Z0-9 ]+$" required
-                [ngClass]="{'is-valid': codigo.valid && codigo.touched, 'is-invalid': !codigo.valid && codigo.touched}">
-              <div [ngClass]="{'text-danger': !codigo.valid && codigo.touched}">Informe o código do contrato sem caracteres especiais</div>
+              <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="this.contrato.codigo" #codigo="ngModel" pattern="^[a-zA-Z0-9 ]+$" required>
+              <div [hidden]="codigo.valid || codigo.untouched">Informe o codigo do contrato sem caracteres especiais</div>
             </div>
 
             <div class="mb-3">
@@ -68,7 +68,7 @@
               <input type="text" class="form-control" id="valor" name="valor" [(ngModel)]="this.contrato.valor" #valor="ngModel"
                      pattern="^\d{1,3}(\.\d{3})*(,\d{2})?$" required
                      [ngClass]="{'is-valid': valor.valid && valor.touched, 'is-invalid': !valor.valid && valor.touched}"
-                     (blur)="formatarValorMonetario(valor)" placeholder="R$">
+                     placeholder="R$">
               <div [ngClass]="{'text-danger': !valor.valid && valor.touched}">Insira o valor do contrato</div>
             </div>
 

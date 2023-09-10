@@ -9,6 +9,9 @@ import { SobreComponent } from './sobre/sobre.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { AddContratoComponent } from './add-contrato/add-contrato.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ContratodetalheComponent } from './contratodetalhe/contratodetalhe.component';
+
 
 
 @NgModule({
@@ -18,12 +21,14 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     SobreComponent,
     ItemListComponent,
-    AddContratoComponent
+    AddContratoComponent,
+    ContratodetalheComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

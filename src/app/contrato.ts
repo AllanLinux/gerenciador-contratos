@@ -1,5 +1,6 @@
 export class Contrato {
   constructor(
+    public id: number,
     public codigo: string,
     public cliente: string,
     public tipoContrato: string,
