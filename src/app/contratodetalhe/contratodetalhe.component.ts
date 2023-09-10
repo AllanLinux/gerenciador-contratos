@@ -12,6 +12,13 @@ export class ContratodetalheComponent implements OnInit {
 
   constructor() { }
 
+  transformToNumber(value: string | number): number {
+    if (typeof value === 'string') {
+      return Number(value.replace('.', '').replace(',', '.'));
+    }
+    return value;
+  }
+
   ngOnInit(): void {
   }
 }

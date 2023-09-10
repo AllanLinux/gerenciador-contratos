@@ -1,9 +1,15 @@
-<p>Código: {{ contrato?.codigo }}</p>
-<p>Cliente: {{ contrato?.cliente }}</p>
-<p>Tipo de contrato: {{ contrato?.tipoContrato }}</p>
-<p>Status: {{ contrato?.status }}</p>
-<p>Data de cadastro: {{ contrato?.dataCadastro }}</p>
-<p>Data de início: {{ contrato?.dataInicio }}</p>
-<p>Data de encerramento: {{ contrato?.dataFim }}</p>
-<p>Descrição: {{ contrato?.descricao }}</p>
-<p>Valor do contrato: R$ {{ contrato?.valor }}</p>
+<ng-container *ngIf="contrato; else noData">
+  <p>Código: {{ contrato.codigo }}</p>
+  <p>Cliente: {{ contrato.cliente }}</p>
+  <p>Tipo de contrato: {{ contrato.tipoContrato }}</p>
+  <p>Status: {{ contrato.status }}</p>
+  <p>Data de cadastro: {{ contrato.dataCadastro | date:'shortDate' }}</p>
+  <p>Data de início: {{ contrato.dataInicio | date:'shortDate' }}</p>
+  <p>Data de encerramento: {{ contrato.dataFim | date:'shortDate' }}</p>
+  <p>Valor do contrato: {{ transformToNumber(contrato.valor) | currency:'BRL':'symbol' }}</p>
+  <p>Descrição: {{ contrato.descricao }}</p>
+</ng-container>
+
+<ng-template #noData>
+  <p>Nenhum detalhe do contrato disponível.</p>
+</ng-template>
