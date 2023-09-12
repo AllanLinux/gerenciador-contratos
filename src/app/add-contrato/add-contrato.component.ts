@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contrato } from '../contrato';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ContratoService } from '../contrato.service';
 import { FormsModule } from '@angular/forms';
 
@@ -9,21 +9,47 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './add-contrato.component.html',
   styleUrls: ['./add-contrato.component.scss']
 })
-export class AddContratoComponent {
+export class AddContratoComponent implements OnInit {
 
   contrato: Contrato = new Contrato(0, '', '', '', '', '', '', '', '', 0);
 
-  constructor(private contratoService: ContratoService, private router: Router) {}
+  statusOptions: string[] = ['Novo', 'Pendente', 'Vigente', 'Não está vigente', 'Arquivado'];
+
+  constructor(
+    private contratoService: ContratoService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = +params['id'];
+      if (id) {
+        this.contratoService.obterContratoPorId(id).subscribe(contrato => {
+          this.contrato = contrato;
+        });
+      }
+    });
+  }
 
   async adicionarContrato(): Promise<void> {
     try {
-      await this.contratoService.adicionarContrato(this.contrato);
-      this.contrato = new Contrato(0, '', '', '', '', '', '', '', '', 0);
-      this.router.navigate(['/home']);
+      if(this.contrato.id === 0) {
+        this.contratoService.adicionarContrato(this.contrato).then(() => {
+          this.router.navigate(['/home']);
+        }).catch(error => {
+          console.error('Erro ao adicionar contrato:', error);
+        });
+      } else {
+        this.contratoService.atualizarContrato(this.contrato).then(() => {
+          this.router.navigate(['/home']);
+        }).catch(error => {
+          console.error('Erro ao salvar contrato:', error);
+        });
+      }
     } catch (error) {
-      console.error('Erro ao adicionar contrato:', error);
+      console.error('Erro ao realizar operação:', error);
     }
   }
-
 
 }

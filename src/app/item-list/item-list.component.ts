@@ -36,6 +36,10 @@ export class ItemListComponent implements OnInit {
     this.router.navigate(['/add-contrato']);
   }
 
+  navegarParaAlterar(id: number) {
+    this.router.navigate([`/add-contrato/${id}`]);
+  }
+
   async excluirContrato(id: number): Promise<void> {
     const index = this.contratos.findIndex(contrato => contrato.id === id);
     if (index !== -1) {

@@ -10,7 +10,8 @@
 
             <div class="mb-3">
               <label for="codigo" class="form-label">Codigo do Contrato</label>
-              <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="this.contrato.codigo" #codigo="ngModel" pattern="^[a-zA-Z0-9 ]+$" required>
+              <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="this.contrato.codigo" #codigo="ngModel" pattern="^[a-zA-Z0-9 ]+$" required
+              [ngClass]="{'is-valid': codigo.valid && codigo.touched, 'is-invalid': !codigo.valid && codigo.touched}">
               <div [hidden]="codigo.valid || codigo.untouched">Informe o codigo do contrato sem caracteres especiais</div>
             </div>
 
@@ -30,9 +31,13 @@
 
             <div class="mb-3">
               <label for="status" class="form-label">Status do Contrato</label>
-              <input type="text" class="form-control" id="status" name="status" [(ngModel)]="this.contrato.status" #status="ngModel" pattern="^[a-zA-Z0-9 ]+$" required
+              <select class="form-control" id="status" name="status" [(ngModel)]="this.contrato.status" #status="ngModel" required
                 [ngClass]="{'is-valid': status.valid && status.touched, 'is-invalid': !status.valid && status.touched}">
-              <div [ngClass]="{'text-danger': !status.valid && status.touched}">Informe o status do contrato sem caracteres especiais</div>
+
+                <option *ngFor="let statusOption of statusOptions" [value]="statusOption">{{statusOption}}</option>
+
+              </select>
+              <div [ngClass]="{'text-danger': !status.valid && status.touched}">Por favor, selecione o status do contrato</div>
             </div>
 
             <div class="mb-3">

@@ -5,12 +5,36 @@
       "codigo": "1234",
       "cliente": "Claro",
       "tipoContrato": "Alocação",
-      "status": "Ativo",
+      "status": "Arquivado",
       "dataCadastro": "2022-01-01",
       "dataInicio": "2022-01-01",
       "dataFim": "2023-01-01",
       "descricao": "Alocação",
       "valor": "1.111,23"
+    },
+    {
+      "id": 3,
+      "codigo": "344567",
+      "cliente": "Vivo",
+      "tipoContrato": "Venda",
+      "status": "Vigente",
+      "dataCadastro": "2023-02-20",
+      "dataInicio": "2023-02-20",
+      "dataFim": "2023-03-20",
+      "descricao": "Contrato de venda referente aos equipamentos da operadora Vivo.",
+      "valor": "123.345,01"
+    },
+    {
+      "id": 4,
+      "codigo": "7374023",
+      "cliente": "UTFPR",
+      "tipoContrato": "Venda",
+      "status": "Pendente",
+      "dataCadastro": "2023-01-01",
+      "dataInicio": "2023-01-01",
+      "dataFim": "2023-05-01",
+      "descricao": "Venda de computadores.",
+      "valor": "45.234,22"
     }
   ]
 }

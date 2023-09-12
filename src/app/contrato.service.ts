@@ -56,4 +56,21 @@ export class ContratoService {
     }
   }
 
+  public async atualizarContrato(contrato: Contrato): Promise<void> {
+    try {
+      await firstValueFrom(this.httpClient.put(`${this.apiUrl}/${contrato.id}`, contrato));
+      const index = this.contratos.findIndex(c => c.id === contrato.id);
+      if (index !== -1) {
+        this.contratos[index] = contrato;
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar contrato:', error);
+      throw error;
+    }
+  }
+
+  public obterContratoPorId(id: number): Observable<Contrato> {
+    return this.httpClient.get<Contrato>(`${this.apiUrl}/${id}`);
+  }
+
 }
