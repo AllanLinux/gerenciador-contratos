@@ -1,0 +1,64 @@
+<div class="container">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Cliente</th>
+        <th>Tipo de Contrato</th>
+        <th>Status</th>
+        <th>Data Início</th>
+        <th>Data Fim</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contrato of contratos; let i = index">
+        <td>{{ contrato.codigo }}</td>
+        <td>{{ contrato.cliente }}</td>
+        <td>{{ contrato.tipoContrato }}</td>
+        <td>{{ contrato.status }}</td>
+        <td>{{ contrato.dataInicio | date:'shortDate' }}</td>
+        <td>{{ contrato.dataFim | date:'shortDate' }}</td>
+        <td>
+          <ng-container *ngIf="contrato.status === 'Vigente'; else habilitado">
+            <button class="btn btn-danger btn-sm btn-space" disabled (click)="excluirContrato(contrato.id)">
+              <i class="bi bi-trash"></i> Excluir
+            </button>
+          </ng-container>
+          <ng-template #habilitado>
+            <button class="btn btn-danger btn-sm btn-space" (click)="excluirContrato(contrato.id)">
+              <i class="bi bi-trash"></i> Excluir
+            </button>
+          </ng-template>
+          <button class="btn btn-warning btn-sm btn-space" (click)="navegarParaAlterar(contrato.id)">
+            <i class="bi bi-arrow-counterclockwise"></i> Alterar
+          </button>
+          <button class="btn btn-info btn-sm btn-space" (click)="visualizarDetalhes(contrato)">
+            <i class="bi bi-info-circle"></i> Detalhes
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary mt-3" (click)="navegarParaAdicionar()">
+    <i class="bi bi-plus"></i> Adicionar </button>
+</div>
+
+<div class="modal" tabindex="-1" [class.d-block]="exibirModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Contrato</h5>
+        <button type="button" class="btn-close" (click)="fecharModal()"></button>
+      </div>
+      <div class="modal-body">
+        <app-contratodetalhe [contrato]="contratoSelecionado"></app-contratodetalhe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
