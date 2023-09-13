@@ -2,6 +2,9 @@
 # Gerenciador de contratos
 Aplicativo que será desenvolvido gradualmente durante a disciplina de Frameworks Web da minha pós graduação em Java na UTFPR.
 
+# GitHub Pages
+https://allanlinux.github.io/gerenciador-contratos/home
+
 ## Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
