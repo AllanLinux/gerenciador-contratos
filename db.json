@@ -10,7 +10,7 @@
       "dataInicio": "2022-01-01",
       "dataFim": "2023-01-01",
       "descricao": "Alocação",
-      "valor": "1.111,23"
+      "valor": "1.111,22"
     },
     {
       "id": 3,
@@ -25,16 +25,16 @@
       "valor": "123.345,01"
     },
     {
-      "id": 4,
-      "codigo": "7374023",
-      "cliente": "UTFPR",
-      "tipoContrato": "Venda",
-      "status": "Pendente",
-      "dataCadastro": "2023-01-01",
-      "dataInicio": "2023-01-01",
-      "dataFim": "2023-05-01",
-      "descricao": "Venda de computadores.",
-      "valor": "45.234,22"
+      "id": 5,
+      "codigo": "2245678",
+      "cliente": "Petrobras",
+      "tipoContrato": "Alocação",
+      "status": "Novo",
+      "dataCadastro": "2020-03-02",
+      "dataInicio": "2022-08-02",
+      "dataFim": "2020-09-14",
+      "descricao": "Alocação",
+      "valor": "5.123,33"
     }
   ]
 }

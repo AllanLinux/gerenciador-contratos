@@ -1,5 +1,6 @@
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 # Gerenciador de contratos
-Aplicativo que será desenvolvido gradualmente durante a disciplina de Frameworks Web da minha pós graduação em Java.
+Aplicativo que será desenvolvido gradualmente durante a disciplina de Frameworks Web da minha pós graduação em Java na UTFPR.
 
 ## Checklist
 

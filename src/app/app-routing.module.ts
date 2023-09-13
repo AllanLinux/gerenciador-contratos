@@ -5,7 +5,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { AddContratoComponent } from './add-contrato/add-contrato.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: ItemListComponent },
   { path: 'add-contrato', component: AddContratoComponent },
   { path: 'add-contrato/:id', component: AddContratoComponent }, // Rota com parâmetro
